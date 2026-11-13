@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>El Puente de Grumbo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="juego">
+    <h1>El Puente de Grumbo</h1>
+    <p class="meta">Convence al troll Grumbo de que te entregue la llave del portón. ¡Con palabras!</p>
+
+    <section class="escena">
+      <div id="personaje" class="personaje">🧌</div>
+      <div class="barra"><div id="confianza" class="barra-relleno"></div></div>
+      <p id="estado" class="estado">Confianza: 40 / 100</p>
+    </section>
+
+    <section id="chat" class="chat"></section>
+
+    <form id="formulario" class="formulario" autocomplete="off">
+      <input id="entrada" type="text" placeholder="Escribe tu mensaje al troll..." maxlength="120" required>
+      <button type="submit">Enviar</button>
+    </form>
+
+    <p id="turnos" class="turnos"></p>
+
+    <aside class="aviso">
+      <strong>🤖 Aviso de transparencia</strong>
+      <p>Hablas con un personaje controlado por inteligencia artificial. Si el servidor tiene clave, tus mensajes se envían a NVIDIA para generar su respuesta. Este juego no guarda lo que escribes. Evita compartir datos personales como tu nombre completo, dirección o teléfono.</p>
+    </aside>
+  </main>
+
+  <script src="cerebro.js"></script>
+  <script src="juego.js"></script>
+</body>
+</html>

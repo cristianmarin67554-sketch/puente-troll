@@ -1,0 +1,55 @@
+:root {
+  --fondo1: #07140b; --fondo2: #1f4d2b; --texto: #eef7ee;
+  --acento: #76ff03; --brillo: #b2ff59; --peligro: #ff3d00;
+  --jugador: #2979ff; --personaje: #5d7a3a;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  background: linear-gradient(var(--fondo1), var(--fondo2));
+  color: var(--texto);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+.juego { width: min(560px, 94vw); padding: 16px 0; }
+h1 { text-align: center; margin: 8px 0 0; }
+.meta { text-align: center; opacity: .8; margin: 4px 0 12px; }
+
+.escena { text-align: center; }
+.personaje { font-size: 96px; transition: transform .3s; }
+.personaje.feliz { transform: scale(1.15); filter: drop-shadow(0 0 16px var(--brillo)); }
+.personaje.enojado { transform: rotate(-8deg); filter: drop-shadow(0 0 16px var(--peligro)); }
+
+.barra { height: 18px; background: #00000066; border-radius: 9px; overflow: hidden; }
+.barra-relleno { height: 100%; width: 40%; background: var(--acento); transition: width .4s, background .4s; }
+.estado { margin: 6px 0 0; font-weight: bold; }
+
+.chat {
+  height: 260px; overflow-y: auto; margin: 12px 0;
+  background: #000000aa; border-radius: 12px; padding: 10px;
+}
+.msg { margin: 6px 0; padding: 8px 12px; border-radius: 12px; max-width: 85%; }
+.msg.jugador { background: var(--jugador); margin-left: auto; }
+.msg.personaje-msg { background: var(--personaje); }
+
+.formulario { display: flex; gap: 8px; }
+.formulario input { flex: 1; padding: 12px; border-radius: 10px; border: 0; font-size: 16px; }
+.formulario button {
+  padding: 12px 18px; border: 0; border-radius: 10px;
+  background: var(--acento); font-weight: bold; cursor: pointer; font-size: 16px;
+}
+.formulario button:disabled, .formulario input:disabled { opacity: .5; }
+.turnos { text-align: center; opacity: .8; }
+
+.aviso {
+  margin-top: 14px; padding: 10px 14px;
+  background: #00000066; border-left: 4px solid var(--acento);
+  border-radius: 10px; font-size: 13px; line-height: 1.5;
+}
+.aviso strong { color: var(--brillo); }
+.aviso p { margin: 4px 0 0; opacity: .85; }
